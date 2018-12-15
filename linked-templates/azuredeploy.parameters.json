@@ -1,0 +1,20 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+      "adminUsername": {
+        "value": "adminuser"
+      },
+      "adminPassword": {
+        "reference": {
+            "keyVault": {
+            "id": "/subscriptions/eb41c904-4d26-429b-9dbb-488a5d6e2b39/resourceGroups/farooq-az-tut-rg/providers/Microsoft.KeyVault/vaults/fooqkeyvault"
+            },
+            "secretName": "vmAdminPassword"
+        }
+    },
+      "dnsLabelPrefix": {
+        "value": "fooq"
+      }
+    }
+  }
